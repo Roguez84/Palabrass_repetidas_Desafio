@@ -18,7 +18,11 @@ for(var i = 1; i < 12; i++) {
 
 console.log(contador_letras);
 
-// var contador_letras = {
-//     llave1: "valor1",
-//     llave2: 2
-// }
+// codigo para iterar object viene de https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+for (const [key, value] of Object.entries(contador_letras)) {
+  //console.log(`${key}: ${value}`);
+  var nuevo_tag = document.createElement("p");
+  var texto_del_tag = document.createTextNode(`${key}: ${value}`);
+  nuevo_tag.appendChild(texto_del_tag);
+  document.getElementById("resultados").appendChild(nuevo_tag);
+}
